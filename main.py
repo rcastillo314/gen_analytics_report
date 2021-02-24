@@ -11,4 +11,9 @@ pdf = FPDF()
 pdf.add_page()
 pdf.set_font('Arial', 'B', 16)
 pdf.cell(40, 10, 'Hello world')
+
+plot_daily_count_states(
+    ['New Hampshire', 'Massachusetts'], filename='test.png')
+pdf.image('test.png')
+
 pdf.output('test.pdf', 'F')
