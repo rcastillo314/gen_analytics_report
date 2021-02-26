@@ -28,6 +28,7 @@ def create_report(day, filename='tutorial.pdf'):
     create_title(day, pdf)
 
     '''Second Page'''
+    pdf.add_page()
     states = ['New Hampshire', 'Massachusetts']
     plot_daily_count_states(states, filename='test.png')
     pdf.image('test.png', 5, 30, WIDTH/2-5)
