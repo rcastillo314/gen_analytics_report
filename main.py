@@ -3,6 +3,7 @@ from fpdf import FPDF
 
 # Local imports
 from daily_counts import plot_daily_count_states, plot_daily_count_countries
+from time_series_analysis import plot_states, plot_countries
 from helper import Mode
 
 WIDTH = 210
