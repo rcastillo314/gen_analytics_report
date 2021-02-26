@@ -30,20 +30,22 @@ def create_report(day, filename='tutorial.pdf'):
     '''Second Page'''
     pdf.add_page()
     states = ['New Hampshire', 'Massachusetts']
-    plot_daily_count_states(states, filename='test.png')
-    pdf.image('test.png', 5, 30, WIDTH/2-5)
+    plot_daily_count_states(states, filename='./charts/test.png')
+    pdf.image('./charts/test.png', 5, 30, WIDTH/2-5)
 
-    plot_daily_count_states(states, mode=Mode.DEATHS, filename='test2.png')
-    pdf.image('test2.png', WIDTH/2+5, 30, WIDTH/2-5)
+    plot_daily_count_states(states, mode=Mode.DEATHS,
+                            filename='./charts/test2.png')
+    pdf.image('./charts/test2.png', WIDTH/2+5, 30, WIDTH/2-5)
 
-    plot_states(states, filename='test3.png')
-    pdf.image('test3.png', 5, 110, WIDTH/2-5)
+    plot_states(states, filename='./charts/test3.png')
+    pdf.image('./charts/test3.png', 5, 110, WIDTH/2-5)
 
-    plot_states(states, mode=Mode.DEATHS, filename='test4.png')
-    pdf.image('test4.png', WIDTH/2+5, 110, WIDTH/2-5)
+    plot_states(states, mode=Mode.DEATHS, filename='./charts/test4.png')
+    pdf.image('./charts/test4.png', WIDTH/2+5, 110, WIDTH/2-5)
 
     pdf.output(filename, 'F')
 
 
 if __name__ == '__main__':
-    create_report('test.pdf')
+    day = '10/10/20'
+    create_report(day, 'test.pdf')
