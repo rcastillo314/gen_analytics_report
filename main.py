@@ -10,12 +10,22 @@ WIDTH = 210
 HEIGHT = 297
 
 
-def create_report(filename='tutorial.pdf'):
+def create_title(day, pdf):
+    pdf.set_font('Arial', '', 24)
+    pdf.ln(60)
+    pdf.write(5, f"Covid Analytics Report")
+    pdf.ln(10)
+    pdf.set_font('Arial', '', 16)
+    pdf.write(5, f"{day}")
+    pdf.ln(5)
+
+
+def create_report(day, filename='tutorial.pdf'):
     pdf = FPDF()
     ''''First page'''
     pdf.add_page()
-    pdf.set_font('Arial', 'B', 16)
-    pdf.cell(40, 10, 'Hello world')
+    pdf.image('./resources/letterhead_cropped.png', 0, 0, WIDTH)
+    create_title(day, pdf)
 
     '''Second Page'''
     states = ['New Hampshire', 'Massachusetts']
