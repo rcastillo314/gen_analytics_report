@@ -4,6 +4,7 @@ from fpdf import FPDF
 # Local imports
 from daily_counts import plot_daily_count_states, plot_daily_count_countries
 from time_series_analysis import plot_states, plot_countries
+from create_case_maps import plot_usa_case_map, plot_global_case_map
 from helper import Mode
 
 WIDTH = 210
@@ -26,6 +27,9 @@ def create_report(day, filename='tutorial.pdf'):
     pdf.add_page()
     pdf.image('./resources/letterhead_cropped.png', 0, 0, WIDTH)
     create_title(day, pdf)
+
+    plot_usa_case_map('./charts/usa_cases.png', day=day)
+    pdf.image('./charts/usa_cases.png', 5, 90, WIDTH-20)
 
     '''Second Page'''
     pdf.add_page()
